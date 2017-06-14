@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>:: Sweepstake (periodical events) ::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="abstract" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="keywords" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="keywords" lang="de" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="keywords" lang="en-us" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc....">
+<meta name="keywords" lang="en" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="keywords" lang="fr" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="keyphrases" content="Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc...">
+<meta name="author" content="Chi Hoang">
+<meta name="copyright" content="Chi Hoang">
+<meta name="publisher" Content="Chi Hoang">
+<meta name="rating" content="Technology">
+
+<meta name="Kategorie" content="Technology">
+<meta name="category" content="Technology">
+<meta name="page-topic" Content="Technology">
+<meta name="page-type" Content="Technology">
+<meta name="audience" Content="all">
+
+<meta http-equiv="content-language" content="en">
+<meta name="Language" content="English, en">
+<meta name="Security" content="public">
+<meta name="Owner" content="Chi Hoang">
+<meta name="made" content="rebrobates@gmail.com">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="imagetoolbar" CONTENT="no">
+<meta name="MSSmartTagsPreventParsing" content="TRUE">
+
+<meta name="date" content="2017-04-21">
+<meta name="robots" content="follow, index">
+<meta name="googlebot" content="follow, index">
+<link rev="made" href="mailto:rebrobates@gmail.com">
+
+<META http-equiv="PICS-Label" content='(PICS-1.1
+"http://vancouver-webpages.com/VWP1.0/" l gen true comment "VWP1.0"
+on "2004.03.28T15:41-0800" r (P 0 S 0 V 0 Com 0 Tol -1 Env -1 SF 0 Edu -2 Can 0 MC -1 Gam -1 ))'>
+
+<meta name="referrer" content="no-referrer" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="referrer" content="origin" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+ <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> //-->
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div class="left">
+<p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bbrb -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-6449563648591184"
+     data-ad-slot="8910195152"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<p style="padding-top:100px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bbrb 1.5 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-6449563648591184"
+     data-ad-slot="4431879155"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+<div class="wikidoc"><!-- google_ad_section_start -->
+<h2>:: Sweepstake (periodical events) ::</h2>
+<p><em>Sometimes it is necessary to calculate the days of periodical events, like for instance sweepstakes, contests, regular publications, etc..<br>
+<br>
+In general, it is an easy problem to solve. However when the events span multiple days and must not occur in holidays, the problem becomes less trival to solve.<br>
+<br>
+Read this article to learn how you can use the PHP Sweepstakes class to compute the days of regular event taking in account these nuances that may complicate the calculations.</em></p>
+<h2>Introduction</h2>
+<p>There are many types of events that are repeated with regular intervals. That is the case of regular publications or contests like sweepstakes. That is why this class is called PHP Sweepstakes.</p>
+<p>This article is about using this class to compute the dates of periodical events considering special conditions that make the computations more complicated.</p>
+<h2>Periodical Events</h2>
+<div>The problem we want to solve is of events that start at a specific date and repeat themselves after a specific number of days of the event cycle. Some events can also span through multiple days. In addition there may be days when the events needs to pause
+ because the event day may happen to be in the holidays for instance.</div>
+<div>&nbsp;</div>
+<div>This package can generate a lists of an unlimted number of dats of multiple recurring events that could span through multiple days. &nbsp;</div>
+<div>&nbsp;</div>
+<div>It can take a multidimensional array, that includes the start day, the range of the event days, the event cycle (weekly or monthly), as well a list of exceptions that may be holidays for instance.</div>
+<p>The package can display the next and previous editions of each of the listed events.</p>
+<p><em><img src="Home_Screenshot.png" alt="" width="480" height="340"></em></p>
+<h2>Events that Take Multiple Days</h2>
+<div>The biggest problems with these calculations are that each event can start at a different day, can span multiple days, and all depends on the cycle of the event (weekly or monthly).&nbsp;</div>
+<div>&nbsp;</div>
+<div>For instance an event can start at on Monday, spans for 3 days and has a weekly cycle. Or another event starts at a Tuesday, spans 6 days and has a monthly cycle.</div>
+<div>&nbsp;</div>
+<div>For simple events, we could use a cron job but cron is not that flexible to consider for instance exception days.</div>
+<div>&nbsp;</div>
+<div>Using cron is also more difficult to adapt to certain applications needs. Cron considers the server time which often is not in the same time zone of users of the application. Thus we need to implement an algorithm in PHP that uses its date and time functions
+ to consider all these details.&nbsp;</div>
+<div>&nbsp;</div>
+<div>Another limitation of cron is that it only considers the event start thus not considering that the event can span multiple days.</div>
+<h2>Time Wrap</h2>
+<p>Time specifications may exceed the 24 hours that each day take. For instance in Europe the time format uses 24:00 hours format. PHP treats 24:00 like I would expect. It should treat 37:00 by wrapping it into 13:00 tomorrow.</p>
+<p>This kind of scheduling is seen frequently in radio and TV broadcast schedules, not only in Japan. But strtotime('24:00 today') is 0:00 whereas strtotime('24:00') and strtotime('today 24:00') are 0:00 tomorrow. PHP does not handle any time longer than 24:59:59.9
+ though.&nbsp;</p>
+<div>Because the date function can parse English text it is also important to know when a day starts and when it ends. Maybe the difference is very tiny and also using 24:00 and/or 37:00 for scheduling depends on the use case but it is important if you need
+ to parse English text to a UNIX timestamp.</div>
+<h2>Lazy Lists</h2>
+<div>A greater problem is that the package can also list the current and the previous events. Although a an event repeats itself but the date are different. Basicaly it is the week number.&nbsp;</div>
+<div>&nbsp;</div>
+<div>This was a requirement because the date or time change. For instance the sweepstakes prizes may change and it is also necessary to list older sweepstakes.</div>
+<h2>Exception Dates&nbsp;</h2>
+<div>Additionally, another challenge was the list of exceptions, for instance if the calculated day of the event is a holiday. The parameter array may specify multiple exceptions that are simply dates (timestamps).</div>
+<h2>Conclusion</h2>
+<p>As you may have read an apparently simple problem of calculation the dates of periodical events may become much more complicated once you need to consider events details like multiple day spans or exception dates like holidays.</p>
+<p>On the next part of this article we will see how to use the&nbsp;<a href="http://www.phpclasses.org/package/8697-PHP-Calculate-the-days-of-periodical-events.html">PHP Sweepstakes package</a>&nbsp;to solve a real world problem.</p>
+<p>If you liked this article or have a question about the problem of calculating periodical events, post a comment here.</p>
+<p>&nbsp;</p>
+<p><em>In the first part of this article it was covered the problem of computing the dates of periodical events and nuances that can make the solution more complicated.<br>
+<br>
+Read this article to learn how to use the PHP Sweepstakes package to solve a real world example of the problem.</em></p>
+<h2>&nbsp;</h2>
+<h2>A Real World Problem</h2>
+<h2>&nbsp;</h2>
+<div>
+<p>To demonstrate how to solve the scheduling problems, nothing like a real world example. For instance a weekly and/or monthly distributed magazine that also organizes regular sweepstakes, such as word game where you have to answer test questions with multiple
+ choice answers.</p>
+<p>The reader then can use the browser and navigate to the page that uses this package and choose his magazine to enter the winning word along with his personal data to participate to the sweepstakes.</p>
+<p>The package shows all the current sweepstakes and also the previous sweepstakes, so that the reader can participate on the sweepstakes a week or a month later.</p>
+</div>
+<p><em><img src="Home_Screenshot.png" alt="" width="480" height="340"></em></p>
+<p>&nbsp;</p>
+<p>This image shows an example screenshot. In the first row all the magazines from the 35 week of the year and in the second row all the magazines from the 34 week of the year.</p>
+<h2>The Implementation Algorithm</h2>
+<p>It uses an algorithm that simply loops over the given range of days starting from a given day. Then it compares each day with each sweepstakes to find the right sweepstakes. So, it is all gathered in two loops.</p>
+<h2>The PHP Date Functions</h2>
+<p>The exact calendar (time and date) calculations are very difficult. Fortunately PHP offers several functions, like for instance strtotime(), mktime(), date() and DateTime(), that help the developers to solve problems like this.</p>
+<p>For instance the mktime() function can return the current timestamp or any other timestamp. This is useful to change the reference time of the programming system or testing server.</p>
+<p>The date() function can return the day of the week, the week number and the month number. For instance date(&quot;D&quot;) returns the day of the week and it is useful because the sweepstakes starts at specific day.</p>
+<p>The DateTime() function is useful to return the UNIX timestamp with respect to the users time zone. For instance echo $d-&gt;modify(&quot;monday this week&quot;) returns the UNIX timestamp of the monday of this week. The method modify() is needed because the DateTime()
+ functions needs a UNIX timestamp to initialize the class object similar to a seed for a random generator.</p>
+<p>The PHP date functions can also parse english text to unix timestamp. For instance strtotime('14:00 today');</p>
+<p>Basically these 4 php functions are needed to change the reference clock of the user system needed for testing and also for production without actually change the time of the server operating system.</p>
+<h2>Example Tutorial</h2>
+<div>The package takes a multidimensional array as input. The array holds the title, a unique ID, the start day (not to confuse with the start of package), the period cycle (weekly or monthly), the duration of the sweepstakes (currently it can be 3 day, 6 day
+ or a month).</div>
+<pre>array(<br> &quot;title&quot; =&gt; &quot;Sweepstake 1&quot;,<br> &quot;uid&quot; =&gt; &quot;1&quot;,<br> &quot;day&quot; =&gt; &quot;2&quot;,<br> &quot;cycle&quot; =&gt; &quot;0&quot;,<br> &quot;end&quot; =&gt; &quot;0&quot;,<br> &quot;table&quot; =&gt; array(
+  array<br>  (<br>   &quot;ST&quot; =&gt; &quot;18 December&quot;,<br>   &quot;SD&quot; =&gt; 1355785200,<br>  ),<br>  array<br>  (<br>   &quot;ST&quot; =&gt; &quot;24 December&quot;,<br>   &quot;SD&quot; =&gt; 1356303600,<br>  ),<br>  array<br>  (<br>   &quot;ST&quot; =&gt; &quot;2 October&quot;,<br>   &quot;SD&quot; =&gt; 1349128800,<br>  )<br> )<br>)</pre>
+<p>In addition there is the table array that holds the list of exceptions which is simply a date (timestamp). An event can then be saved with many other events together to feed the main function.</p>
+<h2>Creating the Class Object</h2>
+<div>To compute the events create an object and feed it with the array of events and the range of the days to list:</div>
+<pre>$s = new sweepstake();<br>$result = $s-&gt;main($table,31);<br>echo $result;</pre>
+<h2>Changing to the User Time Zone</h2>
+<div>You can change the timezone the match the current timezone by changing the main.php file and the date_default_timezone_set('Europe/Berlin') function.</div>
+<h2>Installation</h2>
+<p>The PHP Sweepstakes package requires PHP 5.3 or later.&nbsp;<a href="http://www.phpclasses.org/package/8697-PHP-Calculate-the-days-of-periodical-events.html">Download the package</a>&nbsp;from phpclasses.org and save the files to where you can include the
+ file main.php.</p>
+<h2>The Complete Example Code</h2>
+<pre>require (&quot;main.php&quot;);
+ 
+$table = array( 
+
+ array( 
+  &quot;title&quot; =&gt; &quot;Sweepstake 1&quot;, 
+  &quot;uid&quot; =&gt; &quot;1&quot;, 
+  &quot;day&quot; =&gt; &quot;2&quot;, 
+  &quot;cycle&quot; =&gt; &quot;0&quot;, 
+  &quot;end&quot; =&gt; &quot;0&quot;, 
+  &quot;table&quot; =&gt; array(
+
+   array 
+   ( 
+    &quot;ST&quot; =&gt; &quot;18 December&quot;, 
+    &quot;SD&quot; =&gt; 1355785200, 
+   ),
+
+   array 
+   ( 
+    &quot;ST&quot; =&gt; &quot;24 December&quot;, 
+    &quot;SD&quot; =&gt; 1356303600, 
+   ),
+ 
+   array 
+   ( 
+    &quot;ST&quot; =&gt; &quot;2 October&quot;, 
+    &quot;SD&quot; =&gt; 1349128800, 
+   )
+
+  ) 
+ )
+);
+
+$s = new sweepstake(); 
+
+$result=$s-&gt;main($table,31); 
+
+echo $result; </pre>
+<div>&nbsp;</div>
+<h2>Example package output</h2>
+<p><img src="Home_sweepstake.png" alt="" width="520" height="283"></p>
+<p>In the example package output above you can see 5 weekly sweepstakes magazines and 1 monthly sweepstake magazine at the start day 1.</p>
+<div>
+<p>You can also see new and old issues when new is the current week and old is the previous week. In day 3 you can see old is empty because the participation on the sweepstake magazine is terminated and/or the magazine is not available anymore.</p>
+<h2>Conclusion</h2>
+</div>
+<p>The PHP Sweepstakes package makes much simpler the calculation of periodical events when you have more complicated factors to take in account, like multiple days span or exception days like holidays.</p>
+<p>If you like this article or have a question about to use this class to solve the problem of scheduling periodical events, post a comment to this article.</p>
+<p>&nbsp;</p>
+<p>[1] Thank you to phpclasses.org!</p>
+<p>Sourcecode:
+<ul><li><a href="http://fas.li/YkQ2D">Sourcecode</a>, <a href="http://adf.ly/1mx4Ej">mirror 1</a></li></ul>
+</p>
+</div><!-- google_ad_section_end -->
+<div class="right">
+<p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bbrb1,1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-6449563648591184"
+     data-ad-slot="1118485950"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+</div>
+<div style="clear:both">
+<p style="padding-left:190px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bbrb4 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6449563648591184"
+     data-ad-slot="5688286351"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+</div>
+
+</body>
